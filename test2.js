@@ -1,35 +1,26 @@
-class Animal{
-    constructor(name,what2say){
-        this.name=name;
-        this.hasTail=true;
-        this.sayWords=what2say;
-    }
-    say(){console.log(this.name, this.sayWords)};
-}
-class Cat extends Animal{
-    constructor(name,what2say,breed){
-        super(name,what2say);
-        this.breed=breed;
-    }
-    say(){console.log("Кошка говорит Мяу!")};
-}
-class Dog extends Animal{
-    constructor(name,what2say,breed){
-        super(name,what2say);
-        this.breed=breed;
-    }
-    say(){console.log("Собака говорит Гав!")};
-}
-class Horse extends Animal{
-    constructor(name,what2say,breed){
-        super(name,what2say);
-        this.breed=breed;
-    }
+//Дата
+try {
+    let birthDate = new Date("06 September 1972");
+    let toDay=new Date();
+    console.log(birthDate, toDay);
+    let diffTime=Math.abs(toDay-birthDate);
+    let diffDays=Math.ceil(diffTime/(1000*60*60*24));
+    console.log(diffDays);
     
+    let x=16000;
+    let myAnnivers = new Date();
+    myAnnivers.SetDate(birthDate.getDate()+1);
+    //birthDate.setDate(birthDate.getDate()+x);
+    console.log(myAnnivers);
+    //console.log(birthDate);    
+} catch (error) {
+    console.log(error);
 }
-let c=new Cat("Васька","беспородный");
-let d=new Dog;
-let h=new Horse("Бурушка","просто что-то говорит","тяжеловес");
-c.say();
-d.say();
-h.say();
+
+len=-10;
+try {
+    if (len<0) {
+        throw new Error("Длина не может быть отрицательной") }
+} catch (error) {
+    console.log(error);
+}
